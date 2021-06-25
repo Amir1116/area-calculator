@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Area Calculator</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Калькулятор площадей</h1>
+    </header>
+
+    <!-- main -->
+    <main class="main"> 
+        <div class="select-shape-unit">
+            <div class="select-group">                
+                <label class="label-select" for="shape-name" >Название фигуры </label>
+                    <input class="options" id="shape-name" type="text" name='shape-name' placeholder="Фигура" tabindex="1" >               
+            </div>
+            <div class="select-group">                
+                <label class="label-select" for="select-shape">Выбор формы</label>
+                <select class="choose-shape options" id="select-shape" tabindex="2"> 
+                    <option  value="shape" selected>Форма</option>
+                    <option  value="square">Квадрат</option>
+                    <option  value="rectangle">Прямоугольник</option>
+                    <option  value="circle">Круг</option>
+                    <option  value="triangle">Треугольник</option>
+                </select>  
+            </div>
+            <div class="select-group">
+                <label class="label-select"  for="initial-unit">Исходные ед.изм.</label>
+                <select class="options choose-initial-units" id="initial-unit" tabindex="3">
+                    <option  value="mm">мм</option>
+                    <option  value="sm">см</option>
+                    <option  value="dm">дм</option>
+                    <option  value="m">м</option>
+                </select>  
+            </div>
+            <div class="select-group">
+                <label class="label-select"  for="final-unit">Расчетные ед.изм.</label>
+                <select class="options choose-initial-units" id="final-unit" tabindex="4">
+                    <option  value="mm">мм</option>
+                    <option  value="sm">см</option>
+                    <option  value="dm">дм</option>
+                    <option  value="m">м</option>
+                </select>  
+            </div>
+        </div>
+        <div class="container-inputs">
+            <div class="side-size-contaner"  id="block-side1">
+                <label class="label-side-size" for="shape__input-side1">Длинна стороны a</label>
+                <input class="shape__input-side1 input-side options"  id="shape__input-side1" type="text" name="shape__input-side1"  >
+            </div>
+            
+            <div class="side-size-contaner" id="block-side2">
+                <label class="label-side-size" for="shape__input-side2">Длинна стороны b</label>
+                <input class="shape__input-side2 input-side options" id="shape__input-side2" type="text" name="shape__input-side2" 
+                >
+            </div>
+
+            <div class="side-size-contaner" id="block-side3">
+                <label class="label-side-size" for="shape__input-side3">Длинна стороны c</label>
+                <input class="shape__input-side3 input-side options " id="shape__input-side3" type="text" name="shape__input-side3"
+                >
+            </div>
+
+            <div class="side-size-contaner" id="block-radius">
+                <label class="label-side-size" for="shape__input-radius">Длинна радиуса r</label>
+                <input class="shape__input-radius input-side options" id="shape__input-radius" type="text" name="shape__input-side3"
+                 >
+            </div>
+        </div><!--./container shape-input --> <!--select-shape-unit-->
+        <div class="button-container">
+            <button class="btn-calculate" id="btn-culculate" type="button" disabled>Расчитать</button>
+        </div>
+
+        <div class="shape-image shape-image__container">
+            <h3 class="shape-image__title">Формула</h3>
+            <div class="shape-image-container__schema">
+                <img class="images block" id="shape-image" src="./img/square.png" alt="square">
+                
+            </div>
+        </div>     
+        <div class="table-container">
+            <div class="search-panel-container">
+                <input 
+                id="search-input"
+                class="search-panel-container__input" type="text" placeholder="название фигуры...">
+                <div class="search-panel-modal">
+                    <!-- <span class="search-item">name1</span>
+                    <span class="search-item">name2</span>
+                    <span class="search-item">name3</span>                   -->
+                </div>
+                <button class="searh-panel__button" type="button">Поиск</button>
+            </div>
+            <table border='1' class="table-results">
+                <caption>Результат</caption>
+                <tr>
+                    <th class="table-header">№</th>
+                    <th class="table-header">Название</th>
+                    <th class="table-header">Форма</th>
+                    <th class="table-header">Длина a</th>
+                    <th class="table-header">Длина a</th>
+                    <!-- <th class="table-header">Длина a</th> -->
+                    <th class="table-header">Исх. ед.изм</th>
+                    <th class="table-header">Расч. ед.изм</th>
+                    <th class="table-header">Площадь</th>
+                    <th class="table-header">Периметр</th>
+                    <th class="table-header">
+                        <select class="menu-result" name="edit" id="edit-result">
+                            <option class="result-menu-icon" value="edit" checked>
+                                редактировать
+                            </option>
+                            <option value="edit">
+                                изм.
+                            </option>
+                            <option value="delete">удал.</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                     1
+                    </td>
+                    <td >
+                        Фигура
+                    </td>
+                    <td>
+                      Прямоугольник
+                    </td>
+                    <td>
+                       4 
+                    </td>
+                    <td>
+                      6
+                    </td>
+                    <td>
+                        мм
+                    </td>
+                    <td>
+                       мм
+                    </td>
+                    <td>
+                        24
+                    </td>
+                    <td>
+                        24
+                    </td>
+                </tr>
+            </table>
+        </div> <!--/.table container-->
+        <div class="button-container">
+            <button class="btn-calculate" id="btn-culculate" type="button">Добавить расчет</button>
+        </div>
+    </main> <!--/.main-->
+    <footer class="footer">
+        <span class="footer__date" id="foote__date">2021</span>
+    </footer>
+
+    <script src="./js/doc_vars.js"></script>
+    <script src="./js/funcs.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
